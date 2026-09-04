@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Fingerprint Blood Group Detection</title>
+
+<style>
+
+/* ---------- BODY ---------- */
+body{
+    margin:0;
+    font-family: "Segoe UI", sans-serif;
+
+    /* Fingerprint + medical background */
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url("https://images.unsplash.com/photo-1581092918056-0c4c3acd3789");
+
+    background-size: cover;
+    background-position: center;
+    color:white;
+    text-align:center;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.container{
+    width:420px;
+    margin:80px auto;
+    padding:30px;
+
+    background:rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+/* ---------- TITLE ---------- */
+h1{
+    margin-bottom:20px;
+}
+
+/* ---------- UPLOAD AREA ---------- */
+.upload-box{
+    border:2px dashed #00c6ff;
+    padding:25px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.upload-box:hover{
+    background:rgba(255,255,255,0.1);
+}
+
+/* ---------- BUTTON ---------- */
+button{
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    border:none;
+    padding:12px 30px;
+    color:white;
+    font-size:16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* ---------- IMAGE ---------- */
+img{
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+/* ---------- RESULT ---------- */
+.result{
+    margin-top:20px;
+    padding:20px;
+    border-radius:10px;
+    background:rgba(0,0,0,0.4);
+}
+
+/* ---------- LOADING SPINNER ---------- */
+.loader{
+    border:5px solid #f3f3f3;
+    border-top:5px solid #00c6ff;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    animation:spin 1s linear infinite;
+    margin:20px auto;
+    display:none;
+}
+
+@keyframes spin{
+    0%{ transform:rotate(0deg); }
+    100%{ transform:rotate(360deg); }
+}
+
+</style>
+
+<script>
+function showLoader(){
+    document.getElementById("loader").style.display="block";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧬 Fingerprint Blood Group Detection</h1>
+
+<form method="POST" enctype="multipart/form-data" onsubmit="showLoader()">
+
+<div class="upload-box">
+<input type="file" name="file" required>
+<p>Upload fingerprint image</p>
+</div>
+
+<button type="submit">Predict Blood Group</button>
+
+</form>
+
+<div id="loader" class="loader"></div>
+
+{% if image_path %}
+<h3>Uploaded Fingerprint</h3>
+<img src="{{ image_path }}" width="220">
+{% endif %}
+
+{% if prediction %}
+<div class="result">
+<h2>Prediction: {{ prediction }}</h2>
+<h3>Confidence: {{ confidence }} %</h3>
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>

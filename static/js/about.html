@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About BloodPrint</title>
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background:#0f2027;
+color:white;
+scroll-behavior:smooth;
+display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+width:220px;
+background:#071829;
+height:100vh;
+position:fixed;
+padding-top:20px;
+}
+.sidebar h2{
+color:#ff4b5c;
+text-align:center;
+margin-bottom:30px;
+}
+.sidebar a{
+display:block;
+padding:15px 20px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+.sidebar a:hover{
+background:#1f3b5c;
+}
+
+/* MAIN CONTENT */
+.main{
+margin-left:220px;
+width:100%;
+padding:20px 40px;
+}
+.section{
+height:90vh;
+background-size:cover;
+background-position:center;
+border-radius:12px;
+padding:40px;
+margin-bottom:40px;
+}
+
+/* CARDS */
+.card{
+background:rgba(22,44,68,0.8);
+padding:25px;
+border-radius:12px;
+color:white;
+}
+
+/* HEADINGS */
+h2,h3{color:#ff4b5c;}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+<h2>About BloodPrint</h2>
+<a href="#home">Home</a>
+<a href="#method">Methodology</a>
+<a href="#dataset">Dataset</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="main">
+<section class="section" id="home" style="background:url('https://images.unsplash.com/photo-1522202222770-7b3f22d8d1c5');">
+<div class="card"><h2>Home</h2><p>Welcome to BloodPrint! AI-powered fingerprint blood group detection system.</p></div>
+</section>
+
+<section class="section" id="method" style="background:url('https://images.unsplash.com/photo-1605902711622-cfb43c4431e5');">
+<div class="card"><h2>Methodology</h2><p>Fingerprint images are preprocessed and analyzed using a CNN-based ResNet model to predict blood groups accurately.</p></div>
+</section>
+
+<section class="section" id="dataset" style="background:url('https://images.unsplash.com/photo-1581091215362-08d6f7b81b2b');">
+<div class="card"><h2>Dataset</h2><p>Total 5000-6000 fingerprint images covering 8 blood groups. Images resized to 256x256 for model training.</p></div>
+</section>
+
+<section class="section" id="contact" style="background:url('https://images.unsplash.com/photo-1581093803321-c3c0a4ee3b1a');">
+<div class="card"><h2>Contact</h2><p>Developed By: J. Jayasumithra<br>Department: B.Tech IT<br>College: IFET College of Engineering</p></div>
+</section>
+
+</div>
+</body>
+</html>
