@@ -1,0 +1,15 @@
+venv/
+tfenv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Large trained models
+*.h5
+*.keras
+
+# Model archives
+*.zip
+
+# Python cache
+*.pyo
